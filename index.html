@@ -2,201 +2,387 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio Task Instructions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    /* Existing styles */
+    :root {
+      --primary: #6C5CE7;
+      --secondary: #00CEC9;
+      --background: #0f0f1a;
+      --cardBg: rgba(255, 255, 255, 0.05);
+      --text: #ffffff;
+      --footerBg: #111122;
+      --accent-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+      --neon-glow: 0 0 5px #fff, 0 0 10px var(--secondary), 0 0 20px var(--secondary);
+    }
+  
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    :root {
-      --mainColor: #4b6cb7;
-      --secondaryColor: #182848;
-      --textColor: #333;
-      --lightBg: #f8f9fb;
-      --accent: #25D366;
-    }
+  
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, var(--lightBg), #ffffff);
-      color: var(--textColor);
+      background-color: var(--background);
+      color: var(--text);
       line-height: 1.8;
+      min-height: 100vh;
     }
+  
     header {
-      background: linear-gradient(135deg, var(--mainColor), var(--secondaryColor));
-      color: white;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
       text-align: center;
-      padding: 3rem 1rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      padding: 3rem 1rem 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     }
+  
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      text-shadow: var(--neon-glow);
     }
+  
     header p {
       font-size: 1.2rem;
-      opacity: 0.9;
+      margin-bottom: 1rem;
+      opacity: 0.8;
     }
+  
+    .mentor {
+      font-size: 1rem;
+      font-style: italic;
+      opacity: 0.6;
+    }
+  
     main {
       max-width: 1000px;
       margin: auto;
-      padding: 3rem 1.5rem;
+      padding: 2rem 1.5rem;
     }
+  
     section {
-      margin-bottom: 3rem;
-      background: #fff;
-      border-radius: 12px;
+      margin-bottom: 2.5rem;
+      background: var(--cardBg);
+      border-radius: 20px;
       padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
+  
+    section:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(0, 206, 201, 0.2);
+      border-color: var(--secondary);
+    }
+  
     h2 {
-      color: var(--mainColor);
+      color: var(--primary);
       margin-bottom: 1rem;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-shadow: var(--neon-glow);
     }
+  
     ul {
       padding-left: 1.5rem;
       list-style: disc;
     }
+  
     li {
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.7rem;
     }
+  
     a {
-      color: var(--mainColor);
+      color: var(--secondary);
       text-decoration: none;
+      font-weight: 500;
     }
+  
     a:hover {
       text-decoration: underline;
+      color: #00e6e6;
     }
+  
     footer {
       text-align: center;
       padding: 1.5rem;
-      background: var(--secondaryColor);
+      background: var(--accent-gradient);
       color: white;
       font-size: 0.9rem;
+      font-weight: 500;
     }
+  
     .whatsapp-button {
       display: inline-block;
       margin-top: 2rem;
       padding: 0.9rem 2rem;
-      background-color: var(--accent);
+      background: var(--secondary);
       color: white;
       text-decoration: none;
       border-radius: 50px;
       font-weight: 600;
       font-size: 1rem;
-      transition: background 0.3s ease, transform 0.2s ease;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      box-shadow: var(--neon-glow);
     }
+  
     .whatsapp-button:hover {
-      background-color: #1ebc59;
-      transform: translateY(-2px);
+      background: #00a0a0;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 5px 20px rgba(0, 206, 201, 0.6);
+      border-color: white;
     }
-    
-    /* Timer styling */
-    .timer {
-      font-size: 2rem;
-      color: var(--secondaryColor);
-      font-weight: bold;
-      margin-top: 1.5rem;
+  
+    /* Countdown Timer Styles */
+    .timer-box {
+      background: var(--accent-gradient);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      font-size: 1.3rem;
+      font-weight: 600;
       text-align: center;
+      margin-top: 1.5rem;
+      box-shadow: var(--neon-glow);
+      animation: pulse 2s infinite;
+    }
+  
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+  
+    /* Card Hover Effect */
+    .card {
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      padding: 1rem;
+      border-radius: 12px;
+    }
+  
+    .card:hover {
+      border-color: var(--secondary);
+      box-shadow: 0 6px 20px rgba(0, 206, 201, 0.4);
+    }
+  
+    /* Parallax Hover Effect */
+    .hover-parallax {
+      perspective: 800px;
+      transition: transform 0.3s ease;
+    }
+  
+    .hover-parallax:hover {
+      transform: rotateX(5deg) rotateY(-5deg);
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Portfolio Website – Your First Professional Web Project</h1>
-    <p>Build and Submit Your Real-World Portfolio Website</p>
-  </header>
-  <main>
-    <!-- Timer section -->
-    <section>
-      <h2>Countdown Timer</h2>
-      <div class="timer" id="countdown-timer">24:00:00</div>
-    </section>
-    
-    <!-- Rest of your content sections -->
-    <section>
-      <h2>Project Overview</h2>
-      <p>You’ve learned Flexbox, semantic HTML, and CSS. Now it’s time to create your first complete personal portfolio website. This will be your proof of learning and a step into the professional world.</p>
-    </section>
 
-    <section>
-      <h2>Website Structure</h2>
-      <ul>
-        <li><strong>Header:</strong> Name + Tagline, center-aligned with background and stylish font</li>
-        <li><strong>Navbar:</strong> Home | About | Projects | Contact (Flexbox-based horizontal menu + hover effect)</li>
-        <li><strong>About:</strong> Left: image, Right: intro (2-column Flexbox layout, responsive)</li>
-        <li><strong>Projects:</strong> 3 project cards (Flexbox, box-model, links)</li>
-        <li><strong>Contact:</strong> Form with name, email, message and styled button</li>
-        <li><strong>Footer:</strong> © 2025 Your Name (dark background, white text)</li>
-      </ul>
-    </section>
+<header>
+  <h1><i class="fas fa-laptop-code"></i> Portfolio Website Task</h1>
+  <p>Build and Submit Your Real-World Portfolio Website</p>
+  <div class="mentor">Mentor: Abdullah Waseem</div>
+</header>
 
-    <section>
-      <h2>Guidelines</h2>
-      <ul>
-        <li>Only use external CSS</li>
-        <li>Apply <code>box-sizing: border-box;</code> globally</li>
-        <li>Use CSS variables (e.g. <code>--mainColor</code>, <code>--textColor</code>)</li>
-        <li>Use percentage-based widths for responsiveness</li>
-        <li>Use Flexbox in at least 3 sections</li>
-        <li>Use both semantic and non-semantic tags properly</li>
-      </ul>
-    </section>
+<main>
+  <section>
+    <h2><i class="fas fa-info-circle"></i> Project Overview</h2>
+    <p>You’ve learned Flexbox, semantic HTML, and CSS. Now it’s time to create your first complete personal portfolio website. This will be your proof of learning and a step into the professional world.</p>
+  </section>
 
-    <section>
-      <h2>Submission Instructions</h2>
-      <ul>
-        <li>Folder name: <code>yourname-portfolio-task04</code></li>
-        <li>Include HTML and CSS files</li>
-        <li>Zip the folder</li>
-        <li>Submit via WhatsApp or GitHub</li>
-      </ul>
-      <a class="whatsapp-button" href="https://wa.me/923353926259" target="_blank">
-        📩 Send via WhatsApp
-      </a>
-    </section>
+  <!-- Countdown Timer -->
+  <section id="timer-section">
+    <h2><i class="fas fa-clock"></i> Time Remaining</h2>
+    <div class="timer-box" id="countdown-timer">Loading...</div>
+  </section>
 
-    <section>
-      <h2>Resources</h2>
-      <ul>
-        <li><a href="https://mycolor.space/" target="_blank">🎨 Color Scheme Generator</a></li>
-        <li><a href="https://github.com/TheWebUstaad/Web-appBatch1" target="_blank">🔗 Inspiration GitHub Repo</a></li>
-      </ul>
-    </section>
+  <section>
+    <h2><i class="fas fa-sitemap"></i> Website Structure</h2>
+    <ul>
+      <li><strong>Header:</strong> Name + Tagline, center-aligned with background and stylish font</li>
 
-    <section>
-      <h2>Final Note</h2>
-      <p>This is your opportunity to demonstrate what you’ve learned so far. Treat this project seriously and make it portfolio-worthy. Good luck!</p>
-    </section>
-  </main>
+      <li><strong>Navbar:</strong> Home | About | Projects | Contact (Flexbox-based horizontal menu + hover effect)</li>
+      <li><strong>Banner:</strong> Full-width hero banner/image backgorund image  at top with overlay text (optional CTA button)</li>
+      <li><strong>About:</strong> Left: image, Right: intro (2-column Flexbox layout, responsive)</li>
+      <li><strong>Projects:</strong> 3 project cards (Flexbox, box-model, links, hover effects on borders)</li>
+      <li><strong>Footer:</strong> © 2025 Your Name (dark background, white text)</li>
+      <li><strong>Hover Effects:</strong> Add border or shadow animation on cards and buttons</li>
+      <li><strong>Responsive Design:</strong> Must work well on mobile devices</li>
+      <li><strong>CSS Variables:</strong> Define and use theme colors via CSS variables</li>
+    </ul>
+  </section>
+  <section class="hover-parallax">
+    <h2><i class="fas fa-check-circle"></i> Detailed Guidelines</h2>
+  
+    <ul class="guideline-list">
+  
+      <!-- External CSS -->
+      <li>
+        <span class="checkmark">✔</span>
+        <strong>External CSS only</strong><br>
+        <small>Don’t use inline or internal styles. Always link an external CSS file.</small>
+      </li>
+  
+      <!-- Box-sizing -->
+      <li>
+        <span class="checkmark">✔</span>
+        <strong>Global <code>box-sizing: border-box;</code></strong><br>
+        <small>This ensures consistent sizing across browsers. Add it at the top of your CSS:</small>
+        <pre><code>* { box-sizing: border-box; }</code></pre>
+      </li>
+  
+      <!-- CSS Variables -->
+      <li>
+        <span class="checkmark">✔</span>
+        <strong>CSS Variables (Theme Colors)</strong><br>
+        <small>Define colors once and reuse them. Example:</small>
+        <pre><code>:root {
+    --primary: #6C5CE7;
+    --secondary: #00CEC9;
+  }</code></pre>
+      </li>
+  
+      <!-- Responsive Design -->
+      <li>
+        <span class="checkmark">✔</span>
+        <strong>Use percentage-based widths & media queries</strong><br>
+        <small>Your site should look good on phones too. Use % and flex-wrap</small>
+       
+      </li>
+  
+      <!-- Flexbox Usage -->
+      <li>
+        <span class="checkmark">✔</span>
+        <strong>Flexbox in at least 3 sections</strong><br>
+        <small>Navbar, About section, Projects layout — all great places to use Flexbox.</small>
+      </li>
+  
+      <!-- Semantic Tags -->
+      <li>
+        <span class="checkmark">✔</span>
+        <strong>Semantic + Non-Semantic Tag Mix</strong><br>
+        <small>Use tags like <code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code> along with <code>div</code>  where appropriate.</small>
+      </li>
+  
+      <!-- Folder Structure -->
+      <li>
+        <span class="checkmark">⚠️</span>
+        <strong>Folder Name Format</strong><br>
+        <small>Save your work in a folder named exactly like this:</small>
+        <code>yourname-portfolio-task05</code>
+      </li>
+  
+      <!-- File Types -->
+      <li>
+        <span class="checkmark">⚠️</span>
+        <strong>Include Only These Files</strong><br>
+        <small>You must have these files inside your folder:</small>
+        <ul>
+          <li><code>index.html</code></li>
+          <li><code>style.css</code></li>
+        </ul>
+      </li>
+  
+      <!-- Submission -->
+      <li>
+        <span class="checkmark">⚠️</span>
+        <strong>Submit as ZIP</strong><br>
+        <small>Zip the folder and send via WhatsApp or GitHub as instructed.</small>
+      </li>
+  
+    </ul>
+  </section>
 
-  <footer>
-    <p>© 2025 Your Name</p>
-  </footer>
+  <section>
+    <h2><i class="fas fa-upload"></i> Submission Instructions</h2>
+    <ul>
+      <li>Folder name: <code>yourname-portfolio-task05</code></li>
+      <li>Include HTML and CSS files</li>
+      <li>Zip the folder</li>
+      <li>Submit via WhatsApp </li>
+    </ul>
+    <a class="whatsapp-button" href="https://wa.me/923353926259" target="_blank">
+      <i class="fab fa-whatsapp"></i> Send via WhatsApp
+    </a>
+  </section>
 
-  <script>
-    // Countdown Timer Logic
-    const countdownDisplay = document.getElementById("countdown-timer");
-    let timeLeft = 30 * 60; // 30 minutes in seconds
+  <section>
+    <h2><i class="fas fa-tools"></i> Resources</h2>
+    <ul>
+      <li><a href="https://mycolor.space/" target="_blank">🎨 Color Scheme Generator</a></li>
+      <li><a href="https://github.com/TheWebUstaad/Web-appBatch1" target="_blank">🔗 Inspiration GitHub Repo</a></li>
+    </ul>
+  </section>
 
-    const updateTimer = () => {
-      const minutes = Math.floor(timeLeft / 60);
-      const seconds = timeLeft % 60;
-      countdownDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-      
-      if (timeLeft > 0) {
-        timeLeft--;
-      } else {
-        clearInterval(timerInterval);
-        countdownDisplay.textContent = "Time's up!";
-      }
-    };
+  <section>
+    <h2><i class="fas fa-lightbulb"></i> Final Note</h2>
+    <p>This is your opportunity to demonstrate what you’ve learned so far. Treat this project seriously and make it portfolio-worthy. Good luck!</p>
+  </section>
+</main>
 
-    const timerInterval = setInterval(updateTimer, 1000);
-  </script>
+<footer>
+  <p>© 2025 Mentor <a href="https://www.fb.com/TheWebUstaad">Abdullah Waseem</a> — Portfolio Task</p>
+</footer>
+
+<!-- Timer Script -->
+<script>
+  const COOKIE_NAME = "portfolioTaskStartTime";
+  const TIMER_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(";").shift();
+  }
+
+  function setCookie(name, value, ms) {
+    const date = new Date();
+    date.setTime(date.getTime() + ms);
+    document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
+  }
+
+  function updateTimer() {
+    let startTime = parseInt(getCookie(COOKIE_NAME));
+
+    if (!startTime) {
+      startTime = Date.now();
+      setCookie(COOKIE_NAME, startTime, TIMER_DURATION);
+    }
+
+    const timeLeft = TIMER_DURATION - (Date.now() - startTime);
+
+    if (timeLeft <= 0) {
+      document.getElementById("countdown-timer").textContent = "Time's up! Please submit ASAP.";
+      document.getElementById("timer-section").style.opacity = 0.7;
+      return;
+    }
+
+    const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown-timer").textContent =
+      `${hours}h ${minutes}m ${seconds}s remaining`;
+
+    setTimeout(updateTimer, 1000);
+  }
+
+  updateTimer();
+</script>
+
 </body>
 </html>
