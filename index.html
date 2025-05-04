@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Task Instructions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --mainColor: #4b6cb7;
+      --secondaryColor: #182848;
+      --textColor: #333;
+      --lightBg: #f8f9fb;
+      --accent: #25D366;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--lightBg), #ffffff);
+      color: var(--textColor);
+      line-height: 1.8;
+    }
+    header {
+      background: linear-gradient(135deg, var(--mainColor), var(--secondaryColor));
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+    section {
+      margin-bottom: 3rem;
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    h2 {
+      color: var(--mainColor);
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+      list-style: disc;
+    }
+    li {
+      margin-bottom: 0.6rem;
+    }
+    a {
+      color: var(--mainColor);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--secondaryColor);
+      color: white;
+      font-size: 0.9rem;
+    }
+    .whatsapp-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.9rem 2rem;
+      background-color: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .whatsapp-button:hover {
+      background-color: #1ebc59;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portfolio Website – Your First Professional Web Project</h1>
+    <p>Build and Submit Your Real-World Portfolio Website</p>
+  </header>
+  <main>
+    <section>
+      <h2>Project Overview</h2>
+      <p>You’ve learned Flexbox, semantic HTML, and CSS. Now it’s time to create your first complete personal portfolio website. This will be your proof of learning and a step into the professional world.</p>
+    </section>
+
+    <section>
+      <h2>Website Structure</h2>
+      <ul>
+        <li><strong>Header:</strong> Name + Tagline, center-aligned with background and stylish font</li>
+        <li><strong>Navbar:</strong> Home | About | Projects | Contact (Flexbox-based horizontal menu + hover effect)</li>
+        <li><strong>About:</strong> Left: image, Right: intro (2-column Flexbox layout, responsive)</li>
+        <li><strong>Projects:</strong> 3 project cards (Flexbox, box-model, links)</li>
+        <li><strong>Contact:</strong> Form with name, email, message and styled button</li>
+        <li><strong>Footer:</strong> © 2025  Muhammad Abdullah Waseem (dark background, white text)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Guidelines</h2>
+      <ul>
+        <li>Only use external CSS</li>
+        <li>Apply <code>box-sizing: border-box;</code> globally</li>
+        <li>Use CSS variables (e.g. <code>--mainColor</code>, <code>--textColor</code>)</li>
+        <li>Use percentage-based widths for responsiveness</li>
+        <li>Use Flexbox in at least 3 sections</li>
+        <li>Use both semantic and non-semantic tags properly</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Submission Instructions</h2>
+      <ul>
+        <li>Folder name: <code>yourname-portfolio-task04</code></li>
+        <li>Include HTML and CSS files</li>
+        <li>Zip the folder</li>
+        <li>Submit via WhatsApp or GitHub</li>
+      </ul>
+      <a class="whatsapp-button" href="https://wa.me/923353926259" target="_blank">
+        📩 Send via WhatsApp
+      </a>
+    </section>
+
+    <section>
+      <h2>Resources</h2>
+      <ul>
+        <li><a href="https://mycolor.space/" target="_blank">🎨 Color Scheme Generator</a></li>
+        <li><a href="https://github.com/TheWebUstaad/Web-appBatch1" target="_blank">🔗 Inspiration GitHub Repo</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Final Note</h2>
+      <p>This is your opportunity to demonstrate what you’ve learned so far. Treat this project seriously and make it portfolio-worthy. Good luck!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025  Muhammad Abdullah Waseem</p>
+  </footer>
+</body>
+</html>
