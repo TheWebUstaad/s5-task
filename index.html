@@ -5,66 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio Task Instructions</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    /* Existing styles */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
     :root {
-      --primary: #6C5CE7;
-      --secondary: #00CEC9;
-      --background: #F0F4F8;
-      --cardBg: #FFFFFF;
-      --text: #2D3436;
-      --footerBg: #2C3A47;
+      --mainColor: #4b6cb7;
+      --secondaryColor: #182848;
+      --textColor: #333;
+      --lightBg: #f8f9fb;
+      --accent: #25D366;
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background: var(--background);
-      color: var(--text);
+      background: linear-gradient(135deg, var(--lightBg), #ffffff);
+      color: var(--textColor);
       line-height: 1.8;
     }
     header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: linear-gradient(135deg, var(--mainColor), var(--secondaryColor));
       color: white;
       text-align: center;
-      padding: 3rem 1rem 2rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      padding: 3rem 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
     header p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-    }
-    .mentor {
-      font-size: 0.95rem;
-      font-style: italic;
-      opacity: 0.85;
+      font-size: 1.2rem;
+      opacity: 0.9;
     }
     main {
       max-width: 1000px;
       margin: auto;
-      padding: 2rem 1.5rem;
+      padding: 3rem 1.5rem;
     }
     section {
-      margin-bottom: 2.5rem;
-      background: var(--cardBg);
-      border-radius: 16px;
+      margin-bottom: 3rem;
+      background: #fff;
+      border-radius: 12px;
       padding: 2rem;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
     h2 {
-      color: var(--primary);
+      color: var(--mainColor);
       margin-bottom: 1rem;
       font-size: 1.6rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
     ul {
       padding-left: 1.5rem;
@@ -74,7 +65,7 @@
       margin-bottom: 0.6rem;
     }
     a {
-      color: var(--secondary);
+      color: var(--mainColor);
       text-decoration: none;
     }
     a:hover {
@@ -83,7 +74,7 @@
     footer {
       text-align: center;
       padding: 1.5rem;
-      background: var(--footerBg);
+      background: var(--secondaryColor);
       color: white;
       font-size: 0.9rem;
     }
@@ -91,7 +82,7 @@
       display: inline-block;
       margin-top: 2rem;
       padding: 0.9rem 2rem;
-      background-color: var(--secondary);
+      background-color: var(--accent);
       color: white;
       text-decoration: none;
       border-radius: 50px;
@@ -100,41 +91,56 @@
       transition: background 0.3s ease, transform 0.2s ease;
     }
     .whatsapp-button:hover {
-      background-color: #00a0a0;
+      background-color: #1ebc59;
       transform: translateY(-2px);
+    }
+    
+    /* Timer styling */
+    .timer {
+      font-size: 2rem;
+      color: var(--secondaryColor);
+      font-weight: bold;
+      margin-top: 1.5rem;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1><i class="fas fa-laptop-code"></i> Portfolio Website Task</h1>
+    <h1>Portfolio Website – Your First Professional Web Project</h1>
     <p>Build and Submit Your Real-World Portfolio Website</p>
-    <div class="mentor">Mentor: Abdullah Waseem</div>
   </header>
-
   <main>
+    <!-- Timer section -->
     <section>
-      <h2><i class="fas fa-info-circle"></i> Project Overview</h2>
+      <h2>Countdown Timer</h2>
+      <div class="timer" id="countdown-timer">00:30:00</div>
+    </section>
+    
+    <!-- Rest of your content sections -->
+    <section>
+      <h2>Project Overview</h2>
       <p>You’ve learned Flexbox, semantic HTML, and CSS. Now it’s time to create your first complete personal portfolio website. This will be your proof of learning and a step into the professional world.</p>
     </section>
 
     <section>
-      <h2><i class="fas fa-sitemap"></i> Website Structure</h2>
+      <h2>Website Structure</h2>
       <ul>
         <li><strong>Header:</strong> Name + Tagline, center-aligned with background and stylish font</li>
         <li><strong>Navbar:</strong> Home | About | Projects | Contact (Flexbox-based horizontal menu + hover effect)</li>
         <li><strong>About:</strong> Left: image, Right: intro (2-column Flexbox layout, responsive)</li>
         <li><strong>Projects:</strong> 3 project cards (Flexbox, box-model, links)</li>
+        <li><strong>Contact:</strong> Form with name, email, message and styled button</li>
         <li><strong>Footer:</strong> © 2025 Your Name (dark background, white text)</li>
       </ul>
     </section>
 
     <section>
-      <h2><i class="fas fa-check-circle"></i> Guidelines</h2>
+      <h2>Guidelines</h2>
       <ul>
         <li>Only use external CSS</li>
         <li>Apply <code>box-sizing: border-box;</code> globally</li>
-        <li>Use CSS variables (e.g. <code>--primary</code>, <code>--text</code>)</li>
+        <li>Use CSS variables (e.g. <code>--mainColor</code>, <code>--textColor</code>)</li>
         <li>Use percentage-based widths for responsiveness</li>
         <li>Use Flexbox in at least 3 sections</li>
         <li>Use both semantic and non-semantic tags properly</li>
@@ -142,20 +148,20 @@
     </section>
 
     <section>
-      <h2><i class="fas fa-upload"></i> Submission Instructions</h2>
+      <h2>Submission Instructions</h2>
       <ul>
-        <li>Folder name: <code>yourname-portfolio-task05</code></li>
+        <li>Folder name: <code>yourname-portfolio-task04</code></li>
         <li>Include HTML and CSS files</li>
         <li>Zip the folder</li>
         <li>Submit via WhatsApp or GitHub</li>
       </ul>
       <a class="whatsapp-button" href="https://wa.me/923353926259" target="_blank">
-        <i class="fab fa-whatsapp"></i> Send via WhatsApp
+        📩 Send via WhatsApp
       </a>
     </section>
 
     <section>
-      <h2><i class="fas fa-tools"></i> Resources</h2>
+      <h2>Resources</h2>
       <ul>
         <li><a href="https://mycolor.space/" target="_blank">🎨 Color Scheme Generator</a></li>
         <li><a href="https://github.com/TheWebUstaad/Web-appBatch1" target="_blank">🔗 Inspiration GitHub Repo</a></li>
@@ -163,13 +169,34 @@
     </section>
 
     <section>
-      <h2><i class="fas fa-lightbulb"></i> Final Note</h2>
+      <h2>Final Note</h2>
       <p>This is your opportunity to demonstrate what you’ve learned so far. Treat this project seriously and make it portfolio-worthy. Good luck!</p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Your Name — Portfolio Task</p>
+    <p>© 2025 Your Name</p>
   </footer>
+
+  <script>
+    // Countdown Timer Logic
+    const countdownDisplay = document.getElementById("countdown-timer");
+    let timeLeft = 30 * 60; // 30 minutes in seconds
+
+    const updateTimer = () => {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      countdownDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      
+      if (timeLeft > 0) {
+        timeLeft--;
+      } else {
+        clearInterval(timerInterval);
+        countdownDisplay.textContent = "Time's up!";
+      }
+    };
+
+    const timerInterval = setInterval(updateTimer, 1000);
+  </script>
 </body>
 </html>
