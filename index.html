@@ -7,16 +7,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    :root {
-      --primary: #6C5CE7;
-      --secondary: #00CEC9;
-      --background: #0f0f1a;
-      --cardBg: rgba(255, 255, 255, 0.05);
-      --text: #ffffff;
-      --footerBg: #111122;
-      --accent-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
-      --neon-glow: 0 0 5px #fff, 0 0 10px var(--secondary), 0 0 20px var(--secondary);
-    }
+   :root {
+  --primary: #3f51b5; /* Indigo */
+  --secondary: #4cafaf; /* Teal */
+  --background: #f4f4f4; /* Light gray background */
+  --cardBg: #ffffff;
+  --text: #333333;
+  --footerBg: #2c2c3e;
+  --accent-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+  --neon-glow: none; /* Remove glow for softer look */
+}
   
     * {
       box-sizing: border-box;
@@ -25,22 +25,22 @@
     }
   
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--background);
-      color: var(--text);
-      line-height: 1.8;
-      min-height: 100vh;
-    }
-  
-    header {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    }
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
   
     header h1 {
       font-size: 3rem;
@@ -188,6 +188,44 @@
     .hover-parallax:hover {
       transform: rotateX(5deg) rotateY(-5deg);
     }
+    /* Mobile Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+    flex-direction: column;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  .whatsapp-button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+  }
+
+  ul {
+    padding-left: 1rem;
+  }
+
+  li {
+    font-size: 0.95rem;
+  }
+
+  .guideline-list li {
+    font-size: 0.85rem;
+  }
+
+  .about-section,
+  .project-section {
+    flex-direction: column;
+  }
+
+  .about-section img {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+}
   </style>
 </head>
 <body>
